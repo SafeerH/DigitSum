@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Digit Sum</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+
+        <form onsubmit="onSubmit(); return false;">
+            <div class="text-center mb-4 mt-5">
+                <!-- <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
+                <h1 class="h3 mb-3 font-weight-normal">Digit Sum</h1>
+                <!-- <p>Build form controls with floating labels via the <code>:placeholder-shown</code> pseudo-element. <a href="https://caniuse.com/#feat=css-placeholder-shown">Works in latest Chrome, Safari, and Firefox.</a></p> -->
+            </div>
+
+            <div class="input-group input-group-lg mb-3">
+                <input type="number" id="inputNumber" class="form-control" placeholder="Number" aria-label="Number">
+                <div class="input-group-append">
+                    <button class="btn btn-primary" type="submit">Go</button>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <h1 id="output"></h1>
+            </div>
+
+            <p class="mt-5 mb-3 text-muted text-center">© 2017-2018</p>
+        </form>
+
+    </div>
+
+    <script>
+        function onSubmit($event) {
+            var input = document.getElementById('inputNumber');
+            var output = document.getElementById('output');
+            var num = Number(input.value);
+            output.innerHTML = digitSum(num);
+        }
+        function digitSum(number) {
+            return number == 0 ? 0 : (number + 8) % 9 + 1
+        }
+    </script>
+</body>
+
+</html>
