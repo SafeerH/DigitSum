@@ -31,22 +31,28 @@
                 <h1 id="output"></h1>
             </div>
 
+            <div class="text-center mb-4 mt-5">
+                <h5 class="h5 mb-3 font-weight-normal">History
+                    <button class="btn btn-sm btn-warning" type="button" onclick="clearLsHistory()">Clear</button>
+                </h5>
+                <div id="history-output"></div>
+            </div>
+
             <p class="mt-5 mb-3 text-muted text-center">© 2017-2018</p>
         </form>
 
     </div>
 
-    <script>
-        function onSubmit($event) {
-            var input = document.getElementById('inputNumber');
-            var output = document.getElementById('output');
-            var num = Number(input.value);
-            output.innerHTML = digitSum(num);
-        }
-        function digitSum(number) {
-            return number == 0 ? 0 : (number + 8) % 9 + 1
-        }
-    </script>
+    <template id="ls-item-tmpl">
+        <div>
+            <h3>
+                <span class="ls-num font-weight-normal"></span> :
+                <span class="ls-num-val"></span>
+            </h3>
+        </div>
+    </template>
+
+    <script src="main.js"></script>
 </body>
 
 </html>
